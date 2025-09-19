@@ -2,5 +2,10 @@
   "template": "bolt-vite-react-ts",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "environmentVariables": {
+    "TINA_CLIENT_ID": "7f0541cf-76a8-4193-ab54-da65437b3641",
+    "TINA_TOKEN": "1ae312568159920fafbdd2c2f725fc719768b103",
+    "VITE_TINA_CLIENT_ID": "7f0541cf-76a8-4193-ab54-da65437b3641"
+  }
 }

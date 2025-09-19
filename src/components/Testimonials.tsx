@@ -84,7 +84,7 @@ const Testimonials = () => {
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {displayTestimonials.map((testimonial, index) => (
             <div 
               key={index}
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 relative"
@@ -112,14 +112,16 @@ const Testimonials = () => {
 
               {/* Testimonial Text */}
               <blockquote className="text-gray-700 mb-6 leading-relaxed">
-                "{testimonial.text}"
+                "{testimonial.body || testimonial.text}"
               </blockquote>
 
               {/* Author */}
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-bold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.timeAgo}</p>
+                  <p className="text-sm text-gray-500">
+                    {testimonial.location || testimonial.timeAgo}
+                  </p>
                 </div>
                 
                 {/* Badges */}

@@ -26,7 +26,7 @@ fragment TestimonialsParts on Testimonials {
   __typename
   name
   location
-  content
+  body
   rating
 }
 

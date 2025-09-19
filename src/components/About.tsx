@@ -16,29 +16,37 @@ const About = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-                Family-Owned Excellence 
+                {about.title || "Family-Owned Excellence"}
                 <span className="text-blue-700"> Since 2003</span>
               </h2>
-              
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Dear Friend, Wilkins Carpet Cleaning is a local, family-owned business proudly serving 
-                the Rocky Mount area and beyond for over <strong>20 years</strong>. We're Carolina's #1 
-                preferred carpet cleaning specialist with a commitment that sets us apart.
-              </p>
 
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
-                <p className="text-lg font-semibold text-gray-900 mb-2">
-                  "We treat every home owner's property as if it was our very own home. 
-                  We're NOT going to cut corners just to get your money!"
-                </p>
-                <p className="text-gray-700">— Anthony Wilkins, Owner/Operator</p>
-              </div>
+              {about.content ? (
+                <div className="prose prose-lg text-gray-600 max-w-none">
+                  <div dangerouslySetInnerHTML={{ __html: about.content }} />
+                </div>
+              ) : (
+                <>
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    Dear Friend, Wilkins Carpet Cleaning is a local, family-owned business proudly serving
+                    the Rocky Mount area and beyond for over <strong>20 years</strong>. We're Carolina's #1
+                    preferred carpet cleaning specialist with a commitment that sets us apart.
+                  </p>
 
-              <p className="text-lg text-gray-700">
-                Our superior cleaning process and commitment to excellence has earned us countless 
-                5-star reviews from satisfied customers. When others say it can't be cleaned, 
-                we prove them wrong.
-              </p>
+                  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                    <p className="text-lg font-semibold text-gray-900 mb-2">
+                      "We treat every home owner's property as if it was our very own home.
+                      We're NOT going to cut corners just to get your money!"
+                    </p>
+                    <p className="text-gray-700">— Anthony Wilkins, Owner/Operator</p>
+                  </div>
+
+                  <p className="text-lg text-gray-700">
+                    Our superior cleaning process and commitment to excellence has earned us countless
+                    5-star reviews from satisfied customers. When others say it can't be cleaned,
+                    we prove them wrong.
+                  </p>
+                </>
+              )}
             </div>
 
             {/* Key Features */}
@@ -83,6 +91,18 @@ const About = () => {
                 </div>
               </div>
             </div>
+
+            {/* Stats Section */}
+            {about.stats && about.stats.length > 0 && (
+              <div className="grid grid-cols-3 gap-6 bg-blue-50 p-6 rounded-xl">
+                {about.stats.map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <p className="text-3xl font-bold text-blue-700">{stat.number}</p>
+                    <p className="text-sm text-gray-600 mt-1">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Image & Testimonial */}

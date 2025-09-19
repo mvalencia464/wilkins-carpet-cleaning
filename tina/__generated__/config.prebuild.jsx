@@ -131,8 +131,9 @@ var config_default = defineConfig({
           },
           {
             type: "rich-text",
-            name: "content",
+            name: "body",
             label: "Testimonial Content",
+            isBody: true,
             required: true
           },
           {

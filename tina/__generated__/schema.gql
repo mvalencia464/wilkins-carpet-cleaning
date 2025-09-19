@@ -185,7 +185,7 @@ type ServicesConnection implements Connection {
 type Testimonials implements Node & Document {
   name: String!
   location: String!
-  content: JSON!
+  body: JSON!
   rating: Float!
   id: ID!
   _sys: SystemInfo!
@@ -211,7 +211,7 @@ input NumberFilter {
 input TestimonialsFilter {
   name: StringFilter
   location: StringFilter
-  content: RichTextFilter
+  body: RichTextFilter
   rating: NumberFilter
 }
 
@@ -369,7 +369,7 @@ input ServicesMutation {
 input TestimonialsMutation {
   name: String
   location: String
-  content: JSON
+  body: JSON
   rating: Float
 }
 
