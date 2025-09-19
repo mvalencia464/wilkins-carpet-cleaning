@@ -1,5 +1,5 @@
 import React from 'react';
-import { TinaEditProvider } from 'tinacms/dist/edit-state';
+import { TinaEditProvider } from 'tinacms';
 
 interface TinaProviderProps {
   children: React.ReactNode;
