@@ -1,0 +1,51 @@
+fragment HeroParts on Hero {
+  __typename
+  title
+  subtitle
+  phone
+  serviceAreas
+  cta {
+    __typename
+    text
+    phone
+  }
+}
+
+fragment ServicesParts on Services {
+  __typename
+  title
+  description
+  icon
+  features {
+    __typename
+    feature
+  }
+}
+
+fragment TestimonialsParts on Testimonials {
+  __typename
+  name
+  location
+  content
+  rating
+}
+
+fragment AboutParts on About {
+  __typename
+  title
+  content
+  stats {
+    __typename
+    number
+    label
+  }
+}
+
+fragment BlogParts on Blog {
+  __typename
+  title
+  date
+  excerpt
+  featuredImage
+  body
+}
