@@ -1,11 +1,15 @@
 ---
-title: "Why Our 12-Step Carpet Cleaning Process Gets Results Others Can't"
-date: "2024-01-15T10:00:00.000Z"
-excerpt: "Most carpet cleaning companies in Rocky Mount, Wilson, and Tarboro use basic 3-4 step methods that only clean the surface. Our comprehensive 12-step process ensures your carpets are deeply cleaned, sanitized, and protected for lasting results."
-featuredImage: "/image.png"
+title: Why Our 12-Step Carpet Cleaning Process Gets Results Others Can't
+date: 2024-01-15T10:00:00.000Z
+excerpt: >-
+  Most carpet cleaning companies in Rocky Mount, Wilson, and Tarboro use basic
+  3-4 step methods that only clean the surface. Our comprehensive 12-step
+  process ensures your carpets are deeply cleaned, sanitized, and protected for
+  lasting results.
+featuredImage: /uploads/image.png
 ---
 
-## Why Our 12-Step Process Delivers Superior Results
+## Why Our 13-Step Process Delivers Superior Results
 
 Most carpet cleaning companies in Rocky Mount, Wilson, and Tarboro use basic 3-4 step methods that only clean the surface. Our comprehensive 12-step process ensures your carpets are deeply cleaned, sanitized, and protected for lasting results.
 
@@ -29,10 +33,11 @@ Most carpet cleaning companies in Rocky Mount, Wilson, and Tarboro use basic 3-4
 ### Why This Matters
 
 Our comprehensive approach ensures:
-- **Deep soil extraction** beyond surface cleaning
-- **Professional pre-treatment** for maximum stain removal
-- **Controlled moisture** to prevent mold and mildew
-- **Accelerated drying** for your convenience
+
+* **Deep soil extraction** beyond surface cleaning
+* **Professional pre-treatment** for maximum stain removal
+* **Controlled moisture** to prevent mold and mildew
+* **Accelerated drying** for your convenience
 
 ### Customer Results
 
@@ -42,6 +47,6 @@ Our comprehensive approach ensures:
 
 Experience the difference our 12-step process makes. Call (252) 937-3276 today for your free estimate.
 
-**Anthony Wilkins, Owner/Operator**  
-Serving Rocky Mount, Wilson, Tarboro & Eastern NC  
+**Anthony Wilkins, Owner/Operator**\
+Serving Rocky Mount, Wilson, Tarboro & Eastern NC\
 Licensed • Bonded • Insured
