@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tinacms build && vite build",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"vite\"",
     "build": "tinacms build && vite build",
     "start": "vite preview",
     "build:local": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"vite\"",
