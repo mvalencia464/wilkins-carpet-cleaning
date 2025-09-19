@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tinacms build && vite build",
     "build": "tinacms build && vite build",
+    "start": "vite preview",
     "build:local": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"vite\"",
     "lint": "eslint .",
     "preview": "vite preview",
