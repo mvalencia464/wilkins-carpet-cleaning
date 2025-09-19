@@ -1,5 +1,5 @@
 ---
-title: Why Our 12-Step Carpet Cleaning Process Gets Results Others Can't
+title: "Why Our 12-Step Carpet Cleaning Process Gets Results Others Can't \U0001F389"
 date: 2024-01-15T10:00:00.000Z
 excerpt: >-
   Most carpet cleaning companies in Rocky Mount, Wilson, and Tarboro use basic
@@ -9,7 +9,7 @@ excerpt: >-
 featuredImage: /uploads/image.png
 ---
 
-## Why Our 13-Step Process Delivers Superior Results
+## Why Our 12-Step Process Delivers Superior Results
 
 Most carpet cleaning companies in Rocky Mount, Wilson, and Tarboro use basic 3-4 step methods that only clean the surface. Our comprehensive 12-step process ensures your carpets are deeply cleaned, sanitized, and protected for lasting results.
 
