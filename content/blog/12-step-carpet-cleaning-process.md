@@ -1,5 +1,5 @@
 ---
-title: "Why Our 12-Step Carpet Cleaning Process Gets Results Others Can't \U0001F389"
+title: Why Our 12-Step Carpet Cleaning Process Gets Results Others Can't
 date: 2024-01-15T10:00:00.000Z
 excerpt: >-
   Most carpet cleaning companies in Rocky Mount, Wilson, and Tarboro use basic
@@ -50,3 +50,5 @@ Experience the difference our 12-step process makes. Call (252) 937-3276 today f
 **Anthony Wilkins, Owner/Operator**\
 Serving Rocky Mount, Wilson, Tarboro & Eastern NC\
 Licensed • Bonded • Insured
+
+![](/uploads/new-model-y-scaled.webp)
