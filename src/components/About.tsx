@@ -2,12 +2,29 @@ import React from 'react';
 import { Award, Clock, Shield, Users, CheckCircle, Phone } from 'lucide-react';
 import { useTinaAbout } from '../hooks/useTina';
 import { aboutContent } from '../utils/content';
+import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
 const About = () => {
   const { data: tinaAbout, loading } = useTinaAbout();
 
   // Use TinaCMS data if available, otherwise fallback to static content
   const about = tinaAbout || aboutContent;
+
+  // Show loading state or fallback if data is not ready
+  if (loading) {
+    return (
+      <section id="about" className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="animate-pulse">
+              <div className="h-8 bg-gray-300 rounded w-1/2 mx-auto mb-4"></div>
+              <div className="h-4 bg-gray-300 rounded w-3/4 mx-auto"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section id="about" className="py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +37,11 @@ const About = () => {
                 <span className="text-blue-700"> Since 2003</span>
               </h2>
 
-              {about.content ? (
+              {about.content && typeof about.content === 'object' ? (
+                <div className="prose prose-lg text-gray-600 max-w-none">
+                  <TinaMarkdown content={about.content} />
+                </div>
+              ) : about.content && typeof about.content === 'string' ? (
                 <div className="prose prose-lg text-gray-600 max-w-none">
                   <div dangerouslySetInnerHTML={{ __html: about.content }} />
                 </div>

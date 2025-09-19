@@ -12,6 +12,7 @@ export const useTinaHero = () => {
         setData(result.data.hero);
       } catch (error) {
         console.error('Error fetching hero data:', error);
+        setData(null);
       } finally {
         setLoading(false);
       }
@@ -34,6 +35,7 @@ export const useTinaServices = () => {
         setData(result.data.servicesConnection.edges.map((edge: any) => edge.node));
       } catch (error) {
         console.error('Error fetching services data:', error);
+        setData([]);
       } finally {
         setLoading(false);
       }
@@ -56,6 +58,7 @@ export const useTinaTestimonials = () => {
         setData(result.data.testimonialsConnection.edges.map((edge: any) => edge.node));
       } catch (error) {
         console.error('Error fetching testimonials data:', error);
+        setData([]);
       } finally {
         setLoading(false);
       }
@@ -78,6 +81,7 @@ export const useTinaAbout = () => {
         setData(result.data.about);
       } catch (error) {
         console.error('Error fetching about data:', error);
+        setData(null); // Ensure data is null on error
       } finally {
         setLoading(false);
       }
