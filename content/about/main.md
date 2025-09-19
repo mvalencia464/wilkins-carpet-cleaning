@@ -1,6 +1,8 @@
 ---
 title: "About Wilkins Carpet Cleaning"
 content: |
+  ![](/uploads/new-model-y-scaled.webp)
+
   ## Family-Owned & Operated Since 2003
 
   Anthony Wilkins has been serving Eastern North Carolina with professional carpet cleaning services for over 20 years. What started as a small family business has grown into the most trusted carpet cleaning service in Rocky Mount, Wilson, and Tarboro.
