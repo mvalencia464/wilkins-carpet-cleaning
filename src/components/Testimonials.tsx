@@ -2,6 +2,7 @@ import React from 'react';
 import { Star, Quote, MapPin } from 'lucide-react';
 import { useTinaTestimonials } from '../hooks/useTina';
 import { testimonialsContent } from '../utils/content';
+import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
 const testimonials = [
   {
@@ -55,6 +56,22 @@ const Testimonials = () => {
   // Use TinaCMS data if available, otherwise fallback to static content
   const displayTestimonials = tinaTestimonials.length > 0 ? tinaTestimonials : testimonialsContent;
   const totalReviews = 50;
+
+  // Show loading state if data is not ready
+  if (loading) {
+    return (
+      <section id="testimonials" className="py-16 lg:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="animate-pulse">
+              <div className="h-8 bg-gray-300 rounded w-1/2 mx-auto mb-4"></div>
+              <div className="h-4 bg-gray-300 rounded w-3/4 mx-auto"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="testimonials" className="py-16 lg:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -112,7 +129,11 @@ const Testimonials = () => {
 
               {/* Testimonial Text */}
               <blockquote className="text-gray-700 mb-6 leading-relaxed">
-                "{testimonial.body || testimonial.text}"
+                {testimonial.body && typeof testimonial.body === 'object' ? (
+                  <TinaMarkdown content={testimonial.body} />
+                ) : (
+                  `"${testimonial.body || testimonial.text}"`
+                )}
               </blockquote>
 
               {/* Author */}
