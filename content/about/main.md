@@ -26,8 +26,6 @@ content: >
   * **Family-Owned**: Personal attention from the business owner
 
   * **Licensed & Insured**: Full protection for your home
-
-  * **Satisfaction Guaranteed**: We stand behind our work
 stats:
   - number: 20+
     label: Years Experience
