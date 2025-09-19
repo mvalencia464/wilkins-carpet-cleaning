@@ -234,7 +234,8 @@ export default defineConfig({
           },
         ],
       },
-      {
+      // TEMPORARILY COMMENTED OUT - WAITING FOR TINACLOUD INDEXING
+      /*{
         name: "contact",
         label: "Contact Section",
         path: "content/contact",
@@ -301,8 +302,8 @@ export default defineConfig({
             required: true,
           },
         ],
-      },
-      {
+      },*/
+      /*{
         name: "footer",
         label: "Footer",
         path: "content/footer",
@@ -395,8 +396,8 @@ export default defineConfig({
             ],
           },
         ],
-      },
-      {
+      },*/
+      /*{
         name: "siteSettings",
         label: "Site Settings",
         path: "content/settings",
@@ -451,7 +452,7 @@ export default defineConfig({
             required: true,
           },
         ],
-      },
+      },*/
     ],
   },
 });

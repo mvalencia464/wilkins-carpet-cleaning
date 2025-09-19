@@ -1,16 +1,19 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
-import { useTinaFooter, useTinaSiteSettings } from '../hooks/useTina';
+// TEMPORARILY DISABLED - WAITING FOR TINACLOUD INDEXING
+// import { useTinaFooter, useTinaSiteSettings } from '../hooks/useTina';
 import { footerContent, siteSettingsContent } from '../utils/content';
 
 const Footer = () => {
-  const { data: tinaFooter, loading: footerLoading } = useTinaFooter();
-  const { data: tinaSettings, loading: settingsLoading } = useTinaSiteSettings();
+  // const { data: tinaFooter, loading: footerLoading } = useTinaFooter();
+  // const { data: tinaSettings, loading: settingsLoading } = useTinaSiteSettings();
 
-  // Use TinaCMS data if available, otherwise fallback to static content
-  const footer = tinaFooter || footerContent;
-  const settings = tinaSettings || siteSettingsContent;
+  // Use static content temporarily while TinaCloud indexes new schema
+  const footer = footerContent;
+  const settings = siteSettingsContent;
+  const footerLoading = false;
+  const settingsLoading = false;
 
   if (footerLoading || settingsLoading) {
     return (

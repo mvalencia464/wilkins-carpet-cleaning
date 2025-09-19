@@ -225,8 +225,9 @@ var config_default = defineConfig({
             isBody: true
           }
         ]
-      },
-      {
+      }
+      // TEMPORARILY COMMENTED OUT - WAITING FOR TINACLOUD INDEXING
+      /*{
         name: "contact",
         label: "Contact Section",
         path: "content/contact",
@@ -234,67 +235,67 @@ var config_default = defineConfig({
         ui: {
           allowedActions: {
             create: false,
-            delete: false
-          }
+            delete: false,
+          },
         },
         fields: [
           {
             type: "string",
             name: "title",
             label: "Section Title",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "subtitle",
             label: "Subtitle",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "phone",
             label: "Phone Number",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "email",
             label: "Email Address",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "address",
             label: "Address",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "city",
             label: "City, State, ZIP",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "ctaTitle",
             label: "CTA Title",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "ctaSubtitle",
             label: "CTA Subtitle",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "rating",
             label: "Star Rating Text",
-            required: true
-          }
-        ]
-      },
-      {
+            required: true,
+          },
+        ],
+      },*/
+      /*{
         name: "footer",
         label: "Footer",
         path: "content/footer",
@@ -302,63 +303,63 @@ var config_default = defineConfig({
         ui: {
           allowedActions: {
             create: false,
-            delete: false
-          }
+            delete: false,
+          },
         },
         fields: [
           {
             type: "string",
             name: "companyName",
             label: "Company Name",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "tagline",
             label: "Tagline",
-            required: true
+            required: true,
           },
           {
             type: "rich-text",
             name: "description",
             label: "Company Description",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "phone",
             label: "Phone Number",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "email",
             label: "Email Address",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "address",
             label: "Address",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "city",
             label: "City, State, ZIP",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "serviceAreas",
             label: "Service Areas",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "ownerInfo",
             label: "Owner Information",
-            required: true
+            required: true,
           },
           {
             type: "object",
@@ -369,9 +370,9 @@ var config_default = defineConfig({
               {
                 type: "string",
                 name: "service",
-                label: "Service Name"
-              }
-            ]
+                label: "Service Name",
+              },
+            ],
           },
           {
             type: "object",
@@ -382,13 +383,13 @@ var config_default = defineConfig({
               {
                 type: "string",
                 name: "credential",
-                label: "Credential"
-              }
-            ]
-          }
-        ]
-      },
-      {
+                label: "Credential",
+              },
+            ],
+          },
+        ],
+      },*/
+      /*{
         name: "siteSettings",
         label: "Site Settings",
         path: "content/settings",
@@ -396,54 +397,54 @@ var config_default = defineConfig({
         ui: {
           allowedActions: {
             create: false,
-            delete: false
-          }
+            delete: false,
+          },
         },
         fields: [
           {
             type: "string",
             name: "siteName",
             label: "Site Name",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "siteDescription",
             label: "Site Description",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "primaryPhone",
             label: "Primary Phone Number",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "primaryEmail",
             label: "Primary Email",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "businessAddress",
             label: "Business Address",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "businessCity",
             label: "City, State, ZIP",
-            required: true
+            required: true,
           },
           {
             type: "string",
             name: "logoPath",
             label: "Logo Path",
-            required: true
-          }
-        ]
-      }
+            required: true,
+          },
+        ],
+      },*/
     ]
   }
 });

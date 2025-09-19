@@ -64,12 +64,6 @@ type Query {
   aboutConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: AboutFilter): AboutConnection!
   blog(relativePath: String): Blog!
   blogConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: BlogFilter): BlogConnection!
-  contact(relativePath: String): Contact!
-  contactConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ContactFilter): ContactConnection!
-  footer(relativePath: String): Footer!
-  footerConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: FooterFilter): FooterConnection!
-  siteSettings(relativePath: String): SiteSettings!
-  siteSettingsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: SiteSettingsFilter): SiteSettingsConnection!
 }
 
 input DocumentFilter {
@@ -78,9 +72,6 @@ input DocumentFilter {
   testimonials: TestimonialsFilter
   about: AboutFilter
   blog: BlogFilter
-  contact: ContactFilter
-  footer: FooterFilter
-  siteSettings: SiteSettingsFilter
 }
 
 type DocumentConnectionEdges {
@@ -106,7 +97,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Hero | Services | Testimonials | About | Blog | Contact | Footer | SiteSettings | Folder
+union DocumentNode = Hero | Services | Testimonials | About | Blog | Folder
 
 type HeroCta {
   text: String
@@ -316,136 +307,6 @@ type BlogConnection implements Connection {
   edges: [BlogConnectionEdges]
 }
 
-type Contact implements Node & Document {
-  title: String!
-  subtitle: String!
-  phone: String!
-  email: String!
-  address: String!
-  city: String!
-  ctaTitle: String!
-  ctaSubtitle: String!
-  rating: String!
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input ContactFilter {
-  title: StringFilter
-  subtitle: StringFilter
-  phone: StringFilter
-  email: StringFilter
-  address: StringFilter
-  city: StringFilter
-  ctaTitle: StringFilter
-  ctaSubtitle: StringFilter
-  rating: StringFilter
-}
-
-type ContactConnectionEdges {
-  cursor: String!
-  node: Contact
-}
-
-type ContactConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [ContactConnectionEdges]
-}
-
-type FooterServices {
-  service: String
-}
-
-type FooterCredentials {
-  credential: String
-}
-
-type Footer implements Node & Document {
-  companyName: String!
-  tagline: String!
-  description: JSON!
-  phone: String!
-  email: String!
-  address: String!
-  city: String!
-  serviceAreas: String!
-  ownerInfo: String!
-  services: [FooterServices]
-  credentials: [FooterCredentials]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input FooterServicesFilter {
-  service: StringFilter
-}
-
-input FooterCredentialsFilter {
-  credential: StringFilter
-}
-
-input FooterFilter {
-  companyName: StringFilter
-  tagline: StringFilter
-  description: RichTextFilter
-  phone: StringFilter
-  email: StringFilter
-  address: StringFilter
-  city: StringFilter
-  serviceAreas: StringFilter
-  ownerInfo: StringFilter
-  services: FooterServicesFilter
-  credentials: FooterCredentialsFilter
-}
-
-type FooterConnectionEdges {
-  cursor: String!
-  node: Footer
-}
-
-type FooterConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [FooterConnectionEdges]
-}
-
-type SiteSettings implements Node & Document {
-  siteName: String!
-  siteDescription: String!
-  primaryPhone: String!
-  primaryEmail: String!
-  businessAddress: String!
-  businessCity: String!
-  logoPath: String!
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input SiteSettingsFilter {
-  siteName: StringFilter
-  siteDescription: StringFilter
-  primaryPhone: StringFilter
-  primaryEmail: StringFilter
-  businessAddress: StringFilter
-  businessCity: StringFilter
-  logoPath: StringFilter
-}
-
-type SiteSettingsConnectionEdges {
-  cursor: String!
-  node: SiteSettings
-}
-
-type SiteSettingsConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [SiteSettingsConnectionEdges]
-}
-
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -462,12 +323,6 @@ type Mutation {
   createAbout(relativePath: String!, params: AboutMutation!): About!
   updateBlog(relativePath: String!, params: BlogMutation!): Blog!
   createBlog(relativePath: String!, params: BlogMutation!): Blog!
-  updateContact(relativePath: String!, params: ContactMutation!): Contact!
-  createContact(relativePath: String!, params: ContactMutation!): Contact!
-  updateFooter(relativePath: String!, params: FooterMutation!): Footer!
-  createFooter(relativePath: String!, params: FooterMutation!): Footer!
-  updateSiteSettings(relativePath: String!, params: SiteSettingsMutation!): SiteSettings!
-  createSiteSettings(relativePath: String!, params: SiteSettingsMutation!): SiteSettings!
 }
 
 input DocumentUpdateMutation {
@@ -476,9 +331,6 @@ input DocumentUpdateMutation {
   testimonials: TestimonialsMutation
   about: AboutMutation
   blog: BlogMutation
-  contact: ContactMutation
-  footer: FooterMutation
-  siteSettings: SiteSettingsMutation
   relativePath: String
 }
 
@@ -488,9 +340,6 @@ input DocumentMutation {
   testimonials: TestimonialsMutation
   about: AboutMutation
   blog: BlogMutation
-  contact: ContactMutation
-  footer: FooterMutation
-  siteSettings: SiteSettingsMutation
 }
 
 input HeroCtaMutation {
@@ -541,50 +390,6 @@ input BlogMutation {
   excerpt: String
   featuredImage: String
   body: JSON
-}
-
-input ContactMutation {
-  title: String
-  subtitle: String
-  phone: String
-  email: String
-  address: String
-  city: String
-  ctaTitle: String
-  ctaSubtitle: String
-  rating: String
-}
-
-input FooterServicesMutation {
-  service: String
-}
-
-input FooterCredentialsMutation {
-  credential: String
-}
-
-input FooterMutation {
-  companyName: String
-  tagline: String
-  description: JSON
-  phone: String
-  email: String
-  address: String
-  city: String
-  serviceAreas: String
-  ownerInfo: String
-  services: [FooterServicesMutation]
-  credentials: [FooterCredentialsMutation]
-}
-
-input SiteSettingsMutation {
-  siteName: String
-  siteDescription: String
-  primaryPhone: String
-  primaryEmail: String
-  businessAddress: String
-  businessCity: String
-  logoPath: String
 }
 
 schema {

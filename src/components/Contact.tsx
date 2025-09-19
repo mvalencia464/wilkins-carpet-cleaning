@@ -1,13 +1,15 @@
 import React from 'react';
 import { Phone, MapPin, Mail, Clock, CheckCircle, Star } from 'lucide-react';
-import { useTinaContact } from '../hooks/useTina';
+// TEMPORARILY DISABLED - WAITING FOR TINACLOUD INDEXING
+// import { useTinaContact } from '../hooks/useTina';
 import { contactContent } from '../utils/content';
 
 const Contact = () => {
-  const { data: tinaContact, loading } = useTinaContact();
+  // const { data: tinaContact, loading } = useTinaContact();
 
-  // Use TinaCMS data if available, otherwise fallback to static content
-  const contact = tinaContact || contactContent;
+  // Use static content temporarily while TinaCloud indexes new schema
+  const contact = contactContent;
+  const loading = false;
 
   if (loading) {
     return (
