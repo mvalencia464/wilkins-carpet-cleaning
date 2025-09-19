@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import { Phone, Menu, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-interface HeaderProps {
-  onNavigate?: (view: 'home' | 'blog') => void;
-  currentView?: 'home' | 'blog';
-}
-
-const Header = ({ onNavigate, currentView }: HeaderProps) => {
+const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentView = location.pathname === '/blog' ? 'blog' : 'home';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     if (currentView === 'blog') {
       // Navigate to home first, then scroll to section
-      onNavigate?.('home');
+      navigate('/');
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -74,7 +73,7 @@ const Header = ({ onNavigate, currentView }: HeaderProps) => {
               Contact
             </button>
             <button
-              onClick={() => onNavigate?.('blog')}
+              onClick={() => navigate('/blog')}
               className="text-white hover:text-blue-300 font-medium transition-colors"
             >
               Why Wilkins?
@@ -132,7 +131,7 @@ const Header = ({ onNavigate, currentView }: HeaderProps) => {
                 Contact
               </button>
               <button
-                onClick={() => onNavigate?.('blog')}
+                onClick={() => navigate('/blog')}
                 className="block w-full text-left px-3 py-2 text-white hover:text-blue-200 font-medium"
               >
                 Why Wilkins?

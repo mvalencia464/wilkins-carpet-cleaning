@@ -1,13 +1,11 @@
 import React from 'react';
 import { Phone, MapPin, Star, CheckCircle, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useTinaBlog } from '../hooks/useTina';
 import { blogContent } from '../utils/content';
 
-interface BlogPostProps {
-  onNavigate?: (view: 'home' | 'blog') => void;
-}
-
-const BlogPost = ({ onNavigate }: BlogPostProps) => {
+const BlogPost = () => {
+  const navigate = useNavigate();
   const { data: tinaBlog, loading } = useTinaBlog();
 
   // Use TinaCMS data if available, otherwise fallback to static content
@@ -17,7 +15,7 @@ const BlogPost = ({ onNavigate }: BlogPostProps) => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back to Home Button */}
         <button
-          onClick={() => onNavigate?.('home')}
+          onClick={() => navigate('/')}
           className="inline-flex items-center text-blue-700 hover:text-blue-800 mb-8 font-medium"
         >
           <ArrowLeft className="h-5 w-5 mr-2" />
