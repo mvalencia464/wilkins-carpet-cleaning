@@ -49,3 +49,48 @@ fragment BlogParts on Blog {
   featuredImage
   body
 }
+
+fragment ContactParts on Contact {
+  __typename
+  title
+  subtitle
+  phone
+  email
+  address
+  city
+  ctaTitle
+  ctaSubtitle
+  rating
+}
+
+fragment FooterParts on Footer {
+  __typename
+  companyName
+  tagline
+  description
+  phone
+  email
+  address
+  city
+  serviceAreas
+  ownerInfo
+  services {
+    __typename
+    service
+  }
+  credentials {
+    __typename
+    credential
+  }
+}
+
+fragment SiteSettingsParts on SiteSettings {
+  __typename
+  siteName
+  siteDescription
+  primaryPhone
+  primaryEmail
+  businessAddress
+  businessCity
+  logoPath
+}

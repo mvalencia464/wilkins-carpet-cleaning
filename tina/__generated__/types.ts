@@ -92,6 +92,12 @@ export type Query = {
   aboutConnection: AboutConnection;
   blog: Blog;
   blogConnection: BlogConnection;
+  contact: Contact;
+  contactConnection: ContactConnection;
+  footer: Footer;
+  footerConnection: FooterConnection;
+  siteSettings: SiteSettings;
+  siteSettingsConnection: SiteSettingsConnection;
 };
 
 
@@ -190,12 +196,60 @@ export type QueryBlogConnectionArgs = {
   filter?: InputMaybe<BlogFilter>;
 };
 
+
+export type QueryContactArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryContactConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ContactFilter>;
+};
+
+
+export type QueryFooterArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryFooterConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<FooterFilter>;
+};
+
+
+export type QuerySiteSettingsArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QuerySiteSettingsConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<SiteSettingsFilter>;
+};
+
 export type DocumentFilter = {
   hero?: InputMaybe<HeroFilter>;
   services?: InputMaybe<ServicesFilter>;
   testimonials?: InputMaybe<TestimonialsFilter>;
   about?: InputMaybe<AboutFilter>;
   blog?: InputMaybe<BlogFilter>;
+  contact?: InputMaybe<ContactFilter>;
+  footer?: InputMaybe<FooterFilter>;
+  siteSettings?: InputMaybe<SiteSettingsFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -235,7 +289,7 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Hero | Services | Testimonials | About | Blog | Folder;
+export type DocumentNode = Hero | Services | Testimonials | About | Blog | Contact | Footer | SiteSettings | Folder;
 
 export type HeroCta = {
   __typename?: 'HeroCta';
@@ -463,6 +517,147 @@ export type BlogConnection = Connection & {
   edges?: Maybe<Array<Maybe<BlogConnectionEdges>>>;
 };
 
+export type Contact = Node & Document & {
+  __typename?: 'Contact';
+  title: Scalars['String']['output'];
+  subtitle: Scalars['String']['output'];
+  phone: Scalars['String']['output'];
+  email: Scalars['String']['output'];
+  address: Scalars['String']['output'];
+  city: Scalars['String']['output'];
+  ctaTitle: Scalars['String']['output'];
+  ctaSubtitle: Scalars['String']['output'];
+  rating: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ContactFilter = {
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  phone?: InputMaybe<StringFilter>;
+  email?: InputMaybe<StringFilter>;
+  address?: InputMaybe<StringFilter>;
+  city?: InputMaybe<StringFilter>;
+  ctaTitle?: InputMaybe<StringFilter>;
+  ctaSubtitle?: InputMaybe<StringFilter>;
+  rating?: InputMaybe<StringFilter>;
+};
+
+export type ContactConnectionEdges = {
+  __typename?: 'ContactConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Contact>;
+};
+
+export type ContactConnection = Connection & {
+  __typename?: 'ContactConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ContactConnectionEdges>>>;
+};
+
+export type FooterServices = {
+  __typename?: 'FooterServices';
+  service?: Maybe<Scalars['String']['output']>;
+};
+
+export type FooterCredentials = {
+  __typename?: 'FooterCredentials';
+  credential?: Maybe<Scalars['String']['output']>;
+};
+
+export type Footer = Node & Document & {
+  __typename?: 'Footer';
+  companyName: Scalars['String']['output'];
+  tagline: Scalars['String']['output'];
+  description: Scalars['JSON']['output'];
+  phone: Scalars['String']['output'];
+  email: Scalars['String']['output'];
+  address: Scalars['String']['output'];
+  city: Scalars['String']['output'];
+  serviceAreas: Scalars['String']['output'];
+  ownerInfo: Scalars['String']['output'];
+  services?: Maybe<Array<Maybe<FooterServices>>>;
+  credentials?: Maybe<Array<Maybe<FooterCredentials>>>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type FooterServicesFilter = {
+  service?: InputMaybe<StringFilter>;
+};
+
+export type FooterCredentialsFilter = {
+  credential?: InputMaybe<StringFilter>;
+};
+
+export type FooterFilter = {
+  companyName?: InputMaybe<StringFilter>;
+  tagline?: InputMaybe<StringFilter>;
+  description?: InputMaybe<RichTextFilter>;
+  phone?: InputMaybe<StringFilter>;
+  email?: InputMaybe<StringFilter>;
+  address?: InputMaybe<StringFilter>;
+  city?: InputMaybe<StringFilter>;
+  serviceAreas?: InputMaybe<StringFilter>;
+  ownerInfo?: InputMaybe<StringFilter>;
+  services?: InputMaybe<FooterServicesFilter>;
+  credentials?: InputMaybe<FooterCredentialsFilter>;
+};
+
+export type FooterConnectionEdges = {
+  __typename?: 'FooterConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Footer>;
+};
+
+export type FooterConnection = Connection & {
+  __typename?: 'FooterConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<FooterConnectionEdges>>>;
+};
+
+export type SiteSettings = Node & Document & {
+  __typename?: 'SiteSettings';
+  siteName: Scalars['String']['output'];
+  siteDescription: Scalars['String']['output'];
+  primaryPhone: Scalars['String']['output'];
+  primaryEmail: Scalars['String']['output'];
+  businessAddress: Scalars['String']['output'];
+  businessCity: Scalars['String']['output'];
+  logoPath: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type SiteSettingsFilter = {
+  siteName?: InputMaybe<StringFilter>;
+  siteDescription?: InputMaybe<StringFilter>;
+  primaryPhone?: InputMaybe<StringFilter>;
+  primaryEmail?: InputMaybe<StringFilter>;
+  businessAddress?: InputMaybe<StringFilter>;
+  businessCity?: InputMaybe<StringFilter>;
+  logoPath?: InputMaybe<StringFilter>;
+};
+
+export type SiteSettingsConnectionEdges = {
+  __typename?: 'SiteSettingsConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<SiteSettings>;
+};
+
+export type SiteSettingsConnection = Connection & {
+  __typename?: 'SiteSettingsConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<SiteSettingsConnectionEdges>>>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   addPendingDocument: DocumentNode;
@@ -480,6 +675,12 @@ export type Mutation = {
   createAbout: About;
   updateBlog: Blog;
   createBlog: Blog;
+  updateContact: Contact;
+  createContact: Contact;
+  updateFooter: Footer;
+  createFooter: Footer;
+  updateSiteSettings: SiteSettings;
+  createSiteSettings: SiteSettings;
 };
 
 
@@ -575,12 +776,51 @@ export type MutationCreateBlogArgs = {
   params: BlogMutation;
 };
 
+
+export type MutationUpdateContactArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ContactMutation;
+};
+
+
+export type MutationCreateContactArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ContactMutation;
+};
+
+
+export type MutationUpdateFooterArgs = {
+  relativePath: Scalars['String']['input'];
+  params: FooterMutation;
+};
+
+
+export type MutationCreateFooterArgs = {
+  relativePath: Scalars['String']['input'];
+  params: FooterMutation;
+};
+
+
+export type MutationUpdateSiteSettingsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: SiteSettingsMutation;
+};
+
+
+export type MutationCreateSiteSettingsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: SiteSettingsMutation;
+};
+
 export type DocumentUpdateMutation = {
   hero?: InputMaybe<HeroMutation>;
   services?: InputMaybe<ServicesMutation>;
   testimonials?: InputMaybe<TestimonialsMutation>;
   about?: InputMaybe<AboutMutation>;
   blog?: InputMaybe<BlogMutation>;
+  contact?: InputMaybe<ContactMutation>;
+  footer?: InputMaybe<FooterMutation>;
+  siteSettings?: InputMaybe<SiteSettingsMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -590,6 +830,9 @@ export type DocumentMutation = {
   testimonials?: InputMaybe<TestimonialsMutation>;
   about?: InputMaybe<AboutMutation>;
   blog?: InputMaybe<BlogMutation>;
+  contact?: InputMaybe<ContactMutation>;
+  footer?: InputMaybe<FooterMutation>;
+  siteSettings?: InputMaybe<SiteSettingsMutation>;
 };
 
 export type HeroCtaMutation = {
@@ -642,6 +885,50 @@ export type BlogMutation = {
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
+export type ContactMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  phone?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  address?: InputMaybe<Scalars['String']['input']>;
+  city?: InputMaybe<Scalars['String']['input']>;
+  ctaTitle?: InputMaybe<Scalars['String']['input']>;
+  ctaSubtitle?: InputMaybe<Scalars['String']['input']>;
+  rating?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type FooterServicesMutation = {
+  service?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type FooterCredentialsMutation = {
+  credential?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type FooterMutation = {
+  companyName?: InputMaybe<Scalars['String']['input']>;
+  tagline?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['JSON']['input']>;
+  phone?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  address?: InputMaybe<Scalars['String']['input']>;
+  city?: InputMaybe<Scalars['String']['input']>;
+  serviceAreas?: InputMaybe<Scalars['String']['input']>;
+  ownerInfo?: InputMaybe<Scalars['String']['input']>;
+  services?: InputMaybe<Array<InputMaybe<FooterServicesMutation>>>;
+  credentials?: InputMaybe<Array<InputMaybe<FooterCredentialsMutation>>>;
+};
+
+export type SiteSettingsMutation = {
+  siteName?: InputMaybe<Scalars['String']['input']>;
+  siteDescription?: InputMaybe<Scalars['String']['input']>;
+  primaryPhone?: InputMaybe<Scalars['String']['input']>;
+  primaryEmail?: InputMaybe<Scalars['String']['input']>;
+  businessAddress?: InputMaybe<Scalars['String']['input']>;
+  businessCity?: InputMaybe<Scalars['String']['input']>;
+  logoPath?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type HeroPartsFragment = { __typename: 'Hero', title: string, subtitle: string, phone: string, serviceAreas: string, cta?: { __typename: 'HeroCta', text?: string | null, phone?: string | null } | null };
 
 export type ServicesPartsFragment = { __typename: 'Services', title: string, description: string, icon: string, features?: Array<{ __typename: 'ServicesFeatures', feature?: string | null } | null> | null };
@@ -651,6 +938,12 @@ export type TestimonialsPartsFragment = { __typename: 'Testimonials', name: stri
 export type AboutPartsFragment = { __typename: 'About', title: string, content: any, stats?: Array<{ __typename: 'AboutStats', number?: string | null, label?: string | null } | null> | null };
 
 export type BlogPartsFragment = { __typename: 'Blog', title: string, date: string, excerpt: string, featuredImage?: string | null, body?: any | null };
+
+export type ContactPartsFragment = { __typename: 'Contact', title: string, subtitle: string, phone: string, email: string, address: string, city: string, ctaTitle: string, ctaSubtitle: string, rating: string };
+
+export type FooterPartsFragment = { __typename: 'Footer', companyName: string, tagline: string, description: any, phone: string, email: string, address: string, city: string, serviceAreas: string, ownerInfo: string, services?: Array<{ __typename: 'FooterServices', service?: string | null } | null> | null, credentials?: Array<{ __typename: 'FooterCredentials', credential?: string | null } | null> | null };
+
+export type SiteSettingsPartsFragment = { __typename: 'SiteSettings', siteName: string, siteDescription: string, primaryPhone: string, primaryEmail: string, businessAddress: string, businessCity: string, logoPath: string };
 
 export type HeroQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -747,6 +1040,63 @@ export type BlogConnectionQueryVariables = Exact<{
 
 export type BlogConnectionQuery = { __typename?: 'Query', blogConnection: { __typename?: 'BlogConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BlogConnectionEdges', cursor: string, node?: { __typename: 'Blog', id: string, title: string, date: string, excerpt: string, featuredImage?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
+export type ContactQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ContactQuery = { __typename?: 'Query', contact: { __typename: 'Contact', id: string, title: string, subtitle: string, phone: string, email: string, address: string, city: string, ctaTitle: string, ctaSubtitle: string, rating: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type ContactConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ContactFilter>;
+}>;
+
+
+export type ContactConnectionQuery = { __typename?: 'Query', contactConnection: { __typename?: 'ContactConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ContactConnectionEdges', cursor: string, node?: { __typename: 'Contact', id: string, title: string, subtitle: string, phone: string, email: string, address: string, city: string, ctaTitle: string, ctaSubtitle: string, rating: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type FooterQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type FooterQuery = { __typename?: 'Query', footer: { __typename: 'Footer', id: string, companyName: string, tagline: string, description: any, phone: string, email: string, address: string, city: string, serviceAreas: string, ownerInfo: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, services?: Array<{ __typename: 'FooterServices', service?: string | null } | null> | null, credentials?: Array<{ __typename: 'FooterCredentials', credential?: string | null } | null> | null } };
+
+export type FooterConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<FooterFilter>;
+}>;
+
+
+export type FooterConnectionQuery = { __typename?: 'Query', footerConnection: { __typename?: 'FooterConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'FooterConnectionEdges', cursor: string, node?: { __typename: 'Footer', id: string, companyName: string, tagline: string, description: any, phone: string, email: string, address: string, city: string, serviceAreas: string, ownerInfo: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, services?: Array<{ __typename: 'FooterServices', service?: string | null } | null> | null, credentials?: Array<{ __typename: 'FooterCredentials', credential?: string | null } | null> | null } | null } | null> | null } };
+
+export type SiteSettingsQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type SiteSettingsQuery = { __typename?: 'Query', siteSettings: { __typename: 'SiteSettings', id: string, siteName: string, siteDescription: string, primaryPhone: string, primaryEmail: string, businessAddress: string, businessCity: string, logoPath: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type SiteSettingsConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<SiteSettingsFilter>;
+}>;
+
+
+export type SiteSettingsConnectionQuery = { __typename?: 'Query', siteSettingsConnection: { __typename?: 'SiteSettingsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'SiteSettingsConnectionEdges', cursor: string, node?: { __typename: 'SiteSettings', id: string, siteName: string, siteDescription: string, primaryPhone: string, primaryEmail: string, businessAddress: string, businessCity: string, logoPath: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
 export const HeroPartsFragmentDoc = gql`
     fragment HeroParts on Hero {
   __typename
@@ -802,6 +1152,54 @@ export const BlogPartsFragmentDoc = gql`
   excerpt
   featuredImage
   body
+}
+    `;
+export const ContactPartsFragmentDoc = gql`
+    fragment ContactParts on Contact {
+  __typename
+  title
+  subtitle
+  phone
+  email
+  address
+  city
+  ctaTitle
+  ctaSubtitle
+  rating
+}
+    `;
+export const FooterPartsFragmentDoc = gql`
+    fragment FooterParts on Footer {
+  __typename
+  companyName
+  tagline
+  description
+  phone
+  email
+  address
+  city
+  serviceAreas
+  ownerInfo
+  services {
+    __typename
+    service
+  }
+  credentials {
+    __typename
+    credential
+  }
+}
+    `;
+export const SiteSettingsPartsFragmentDoc = gql`
+    fragment SiteSettingsParts on SiteSettings {
+  __typename
+  siteName
+  siteDescription
+  primaryPhone
+  primaryEmail
+  businessAddress
+  businessCity
+  logoPath
 }
     `;
 export const HeroDocument = gql`
@@ -1089,6 +1487,177 @@ export const BlogConnectionDocument = gql`
   }
 }
     ${BlogPartsFragmentDoc}`;
+export const ContactDocument = gql`
+    query contact($relativePath: String!) {
+  contact(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ContactParts
+  }
+}
+    ${ContactPartsFragmentDoc}`;
+export const ContactConnectionDocument = gql`
+    query contactConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ContactFilter) {
+  contactConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ContactParts
+      }
+    }
+  }
+}
+    ${ContactPartsFragmentDoc}`;
+export const FooterDocument = gql`
+    query footer($relativePath: String!) {
+  footer(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...FooterParts
+  }
+}
+    ${FooterPartsFragmentDoc}`;
+export const FooterConnectionDocument = gql`
+    query footerConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: FooterFilter) {
+  footerConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...FooterParts
+      }
+    }
+  }
+}
+    ${FooterPartsFragmentDoc}`;
+export const SiteSettingsDocument = gql`
+    query siteSettings($relativePath: String!) {
+  siteSettings(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...SiteSettingsParts
+  }
+}
+    ${SiteSettingsPartsFragmentDoc}`;
+export const SiteSettingsConnectionDocument = gql`
+    query siteSettingsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: SiteSettingsFilter) {
+  siteSettingsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...SiteSettingsParts
+      }
+    }
+  }
+}
+    ${SiteSettingsPartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
@@ -1121,6 +1690,24 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
       },
     blogConnection(variables?: BlogConnectionQueryVariables, options?: C): Promise<{data: BlogConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BlogConnectionQueryVariables, query: string}> {
         return requester<{data: BlogConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BlogConnectionQueryVariables, query: string}, BlogConnectionQueryVariables>(BlogConnectionDocument, variables, options);
+      },
+    contact(variables: ContactQueryVariables, options?: C): Promise<{data: ContactQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactQueryVariables, query: string}> {
+        return requester<{data: ContactQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactQueryVariables, query: string}, ContactQueryVariables>(ContactDocument, variables, options);
+      },
+    contactConnection(variables?: ContactConnectionQueryVariables, options?: C): Promise<{data: ContactConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactConnectionQueryVariables, query: string}> {
+        return requester<{data: ContactConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactConnectionQueryVariables, query: string}, ContactConnectionQueryVariables>(ContactConnectionDocument, variables, options);
+      },
+    footer(variables: FooterQueryVariables, options?: C): Promise<{data: FooterQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: FooterQueryVariables, query: string}> {
+        return requester<{data: FooterQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: FooterQueryVariables, query: string}, FooterQueryVariables>(FooterDocument, variables, options);
+      },
+    footerConnection(variables?: FooterConnectionQueryVariables, options?: C): Promise<{data: FooterConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: FooterConnectionQueryVariables, query: string}> {
+        return requester<{data: FooterConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: FooterConnectionQueryVariables, query: string}, FooterConnectionQueryVariables>(FooterConnectionDocument, variables, options);
+      },
+    siteSettings(variables: SiteSettingsQueryVariables, options?: C): Promise<{data: SiteSettingsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: SiteSettingsQueryVariables, query: string}> {
+        return requester<{data: SiteSettingsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: SiteSettingsQueryVariables, query: string}, SiteSettingsQueryVariables>(SiteSettingsDocument, variables, options);
+      },
+    siteSettingsConnection(variables?: SiteSettingsConnectionQueryVariables, options?: C): Promise<{data: SiteSettingsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: SiteSettingsConnectionQueryVariables, query: string}> {
+        return requester<{data: SiteSettingsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: SiteSettingsConnectionQueryVariables, query: string}, SiteSettingsConnectionQueryVariables>(SiteSettingsConnectionDocument, variables, options);
       }
     };
   }
@@ -1169,7 +1756,7 @@ export const ExperimentalGetTinaClient = () =>
   getSdk(
     generateRequester(
       createClient({
-        url: "http://localhost:4001/graphql",
+        url: "https://content.tinajs.io/1.6/content/7f0541cf-76a8-4193-ab54-da65437b3641/github/main",
         queries,
       })
     )

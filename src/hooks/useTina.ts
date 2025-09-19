@@ -114,3 +114,72 @@ export const useTinaBlog = () => {
 
   return { data, loading };
 };
+
+export const useTinaContact = () => {
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await client.queries.contact({ relativePath: 'main.md' });
+        setData(response.data.contact);
+      } catch (error) {
+        console.error('Error fetching contact data:', error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return { data, loading };
+};
+
+export const useTinaFooter = () => {
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await client.queries.footer({ relativePath: 'main.md' });
+        setData(response.data.footer);
+      } catch (error) {
+        console.error('Error fetching footer data:', error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return { data, loading };
+};
+
+export const useTinaSiteSettings = () => {
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await client.queries.siteSettings({ relativePath: 'main.md' });
+        setData(response.data.siteSettings);
+      } catch (error) {
+        console.error('Error fetching site settings data:', error);
+        setData(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return { data, loading };
+};

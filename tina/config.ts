@@ -234,6 +234,224 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "contact",
+        label: "Contact Section",
+        path: "content/contact",
+        format: "md",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Section Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "subtitle",
+            label: "Subtitle",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "phone",
+            label: "Phone Number",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "email",
+            label: "Email Address",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "address",
+            label: "Address",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "city",
+            label: "City, State, ZIP",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "ctaTitle",
+            label: "CTA Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "ctaSubtitle",
+            label: "CTA Subtitle",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "rating",
+            label: "Star Rating Text",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "footer",
+        label: "Footer",
+        path: "content/footer",
+        format: "md",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "companyName",
+            label: "Company Name",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "tagline",
+            label: "Tagline",
+            required: true,
+          },
+          {
+            type: "rich-text",
+            name: "description",
+            label: "Company Description",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "phone",
+            label: "Phone Number",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "email",
+            label: "Email Address",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "address",
+            label: "Address",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "city",
+            label: "City, State, ZIP",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "serviceAreas",
+            label: "Service Areas",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "ownerInfo",
+            label: "Owner Information",
+            required: true,
+          },
+          {
+            type: "object",
+            name: "services",
+            label: "Footer Services List",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                name: "service",
+                label: "Service Name",
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "credentials",
+            label: "Business Credentials",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                name: "credential",
+                label: "Credential",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "siteSettings",
+        label: "Site Settings",
+        path: "content/settings",
+        format: "md",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "siteName",
+            label: "Site Name",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "siteDescription",
+            label: "Site Description",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "primaryPhone",
+            label: "Primary Phone Number",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "primaryEmail",
+            label: "Primary Email",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "businessAddress",
+            label: "Business Address",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "businessCity",
+            label: "City, State, ZIP",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "logoPath",
+            label: "Logo Path",
+            required: true,
+          },
+        ],
+      },
     ],
   },
 });

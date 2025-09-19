@@ -42,6 +42,42 @@ export interface BlogContent {
   body: string;
 }
 
+export interface ContactContent {
+  title: string;
+  subtitle: string;
+  phone: string;
+  email: string;
+  address: string;
+  city: string;
+  ctaTitle: string;
+  ctaSubtitle: string;
+  rating: string;
+}
+
+export interface FooterContent {
+  companyName: string;
+  tagline: string;
+  description: string;
+  phone: string;
+  email: string;
+  address: string;
+  city: string;
+  serviceAreas: string;
+  ownerInfo: string;
+  services: { service: string }[];
+  credentials: { credential: string }[];
+}
+
+export interface SiteSettingsContent {
+  siteName: string;
+  siteDescription: string;
+  primaryPhone: string;
+  primaryEmail: string;
+  businessAddress: string;
+  businessCity: string;
+  logoPath: string;
+}
+
 // Static content data - this will be replaced with TinaCMS data
 export const heroContent: HeroContent = {
   title: "Wilkins Carpet Cleaning - THE BEST in Rocky Mount, Wilson, Tarboro",
@@ -137,3 +173,52 @@ export const blogContent: BlogContent[] = [
     body: "Our comprehensive 12-step process ensures your carpets are deeply cleaned, sanitized, and protected for lasting results..."
   }
 ];
+
+export const contactContent: ContactContent = {
+  title: "Ready for Amazing Results?",
+  subtitle: "Don't wait until your carpets are beyond help. Get your FREE estimate today and discover why customers say we're the best in the business.",
+  phone: "252-937-3276",
+  email: "Anthonywilkins777@gmail.com",
+  address: "1357 N Wesleyan Blvd",
+  city: "Rocky Mount, NC 27804",
+  ctaTitle: "Get Your FREE Estimate",
+  ctaSubtitle: "See why customers choose us over the competition. Professional service, honest pricing, amazing results.",
+  rating: "4.8/5 Stars • 50+ Reviews"
+};
+
+export const footerContent: FooterContent = {
+  companyName: "Wilkins Carpet Cleaning",
+  tagline: "Family-Owned Service Since 2003",
+  description: "Carolina's #1 preferred carpet cleaning specialist. Family-owned and operated, serving the Rocky Mount area with honest, dependable service for over 20 years.",
+  phone: "252-937-3276",
+  email: "Anthonywilkins777@gmail.com",
+  address: "1357 N Wesleyan Blvd",
+  city: "Rocky Mount, NC 27804",
+  serviceAreas: "Rocky Mount, Wilson, Tarboro, Nashville, Roanoke Rapids, Louisburg, Springhope, Whitakers, Greenville and surrounding areas in North Carolina",
+  ownerInfo: "Family-owned and operated since 2003 • Anthony Wilkins, Owner/Operator",
+  services: [
+    { service: "Carpet Steam Cleaning" },
+    { service: "Commercial Carpet Cleaning" },
+    { service: "Upholstery Cleaning" },
+    { service: "Tile & Grout Cleaning" },
+    { service: "Carpet Protection" },
+    { service: "Janitorial Services" },
+    { service: "Floor Stripping & Waxing" },
+    { service: "Grout Re-coloring" }
+  ],
+  credentials: [
+    { credential: "Licensed" },
+    { credential: "Bonded" },
+    { credential: "Insured" }
+  ]
+};
+
+export const siteSettingsContent: SiteSettingsContent = {
+  siteName: "Wilkins Carpet Cleaning - THE BEST in Rocky Mount, Wilson, Tarboro",
+  siteDescription: "Award-winning carpet cleaning service serving Rocky Mount, Wilson, Tarboro & surrounding areas for 20+ years. Professional steam cleaning, upholstery, tile & grout.",
+  primaryPhone: "252-937-3276",
+  primaryEmail: "Anthonywilkins777@gmail.com",
+  businessAddress: "1357 N Wesleyan Blvd",
+  businessCity: "Rocky Mount, NC 27804",
+  logoPath: "/wilkins-logo.webp"
+};
