@@ -51,4 +51,6 @@ Experience the difference our 12-step process makes. Call (252) 937-3276 today f
 Serving Rocky Mount, Wilson, Tarboro & Eastern NC\
 Licensed • Bonded • Insured
 
-`<iframe width="560" height="315" src="https://www.youtube.com/embed/LfFWWN0LTjM?si=CruMu1C4m8AQ3OgC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+```htmlbars
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LfFWWN0LTjM?si=CruMu1C4m8AQ3OgC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+```
