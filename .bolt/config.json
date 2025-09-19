@@ -1,3 +1,6 @@
 {
-  "template": "bolt-vite-react-ts"
+  "template": "bolt-vite-react-ts",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install"
 }
