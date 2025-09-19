@@ -1,5 +1,5 @@
 ---
-title: "\U0001F389 Wilkins Carpet Cleaning - THE BEST in Rocky Mount, Wilson, Tarboro"
+title: "Wilkins Carpet Cleaning - THE BEST in Rocky Mount, Wilson, Tarboro \U0001F389\U0001F64C\U0001F3FC"
 subtitle: >-
   Award-winning carpet cleaning service serving Rocky Mount, Wilson, Tarboro &
   surrounding areas for 20+ years. Professional steam cleaning, upholstery, tile
